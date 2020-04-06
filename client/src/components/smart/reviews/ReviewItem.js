@@ -30,34 +30,42 @@ const ReviewItem = ({ match ,history, deleteReview, reviewState: { loading, revi
                 <p>
 
                     { match.params.id !== _id && <Fragment>
-                        <Link to={`/reviews/${_id}`}>Explore</Link> <br/><br/>
+                        <Link to={`/reviews/${_id}`}>Explore</Link>
                     </Fragment> }
                     
-                    <Link to={`/bootcamps/${bootcamp._id}`} className='green-text'>Explore Bootcamp</Link>
                     
                     { authState.isAuthenticated &&  
                     ( authState.user.role === 'admin' || ( authState.user._id === user ) ) && <Fragment>
                     <br/>
                     <br/>
+                    { match.params.id === _id && <Fragment>
+                        <a href='#!' onClick={onDelete} className='red-text secondary-content'>Delete</a>
                     <Link to={`/update-review/${_id}`} className='grey-text'>Update</Link>
-                    <br/>
-                    <a href='#!' onClick={onDelete} className='red-text secondary-content'>Delete</a>
-                    <br/>
-                    <br/>
+                    <br/><br/>
                     </Fragment> }
-                </p>
-                <br/>
-                 
-                <p>
+                    </Fragment> }
+                    
+                    { match.params.id === _id && <Fragment>
+                    <Link to={`/bootcamps/${bootcamp._id}`} className='green-text'>Explore Bootcamp</Link>
+                    <br/><br/><br/>
+                    <p>
                     <i className="material-icons left">devices</i>{ bootcamp.name }
+                    </p>
+                    </Fragment> }
+
                 </p>
+                 
             </div>
             <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4">{title}<i className="material-icons right">close</i></span>
+            <span className="card-title grey-text text-darken-4">{title}<i className="material-icons right">close</i></span>
             <p>{text}</p>
+            
+            { match.params.id === _id && <Fragment>
             <p className='grey-text'>{bootcamp.name}</p>
             <br/>
-            <Link to={`/bootcamps/${bootcamp._id}`} className='btn black pulse'>Explore Bootcamp</Link>
+            <Link to={`/bootcamps/${bootcamp._id}`} className='btn red pulse'>Explore Bootcamp</Link>
+            </Fragment> }
+
             </div>
             </div>
         </Fragment>

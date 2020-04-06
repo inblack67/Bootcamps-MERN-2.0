@@ -16,7 +16,6 @@ export const getAllBootCamps = (filterData=null) => async dispatch => {
             
             const { averageCost, averageRating } = filterData
             res = await axios(`/api/v1/bootcamps?averageCost[gte]=${averageCost}&averageRating[gte]=${averageRating}`)
-            console.log(res.data);
 
         }
 
@@ -133,7 +132,6 @@ export const getBootcampByDistance = (zipcode, distance) => async dispatch => {
 
     try {
         const res = await axios(`/api/v1/bootcamps/radius/${zipcode}/${distance}`)
-        console.log(res.data);
 
         dispatch({
             type: GET_BOOTCAMPS,

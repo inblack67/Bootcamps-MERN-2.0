@@ -18,6 +18,14 @@ const Courses = ({ getAllCourses, bootcampState, courseState: { courses, loading
         return <Preloader />
     }
 
+    if(courses.length === 0){
+        return <Fragment>
+        <div className="container center" style={{'marginBottom': '10rem'}}>
+            <p className="flow-text">No Courses Have Been Published Yet.</p>
+        </div>
+        </Fragment>
+    }
+
     return (
         <Fragment>
             <div className="container">

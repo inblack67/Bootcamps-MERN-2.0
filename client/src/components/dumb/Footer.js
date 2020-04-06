@@ -15,7 +15,7 @@ const Footer = () => {
   <li><Link to='/about' className='white-text'>About</Link></li>
   <br/>
   <li>
-  <a href="https://github.com/inblack67" target="_blank" rel='noopener noreferrer'>
+  <a href="https://github.com/inblack67/Bootcamps-MERN-2.0" target="_blank" rel='noopener noreferrer'>
   <i className="fab fa-github fa-2x red-text left"></i>
   </a>
 

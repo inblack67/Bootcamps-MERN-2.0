@@ -21,7 +21,7 @@ const Users = ({ getAllUsers, userState: { users, loading, count } }) => {
         return <div className='container'>
             <h3>No Users Yet.</h3>
             <br/>
-            <Link to='/users/add-user' className='btn black pulse'>Add User</Link>
+            <Link to='/add-user' className='btn black pulse'>Add User</Link>
             <br/><br/>
         </div>
     }

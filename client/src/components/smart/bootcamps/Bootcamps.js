@@ -65,22 +65,16 @@ const Bootcamps = ({ getBootcampByDistance, getAllBootCamps, bootcampState: { lo
     }
 
     if(bootcamps.length === 0){
-
         return <Fragment>
-
-        { authState.user && (authState.user.role === 'admin' || authState.user.role === 'publisher') && <Fragment>
-            <div className='container'>
-            <h3>No Bootcamps Yet.</h3>
-            <br/>
-            <Link to='/add-user' className='btn black pulse'>Add Bootcamp</Link>
-            <br/><br/>
+        <div className="container center" style={{'marginBottom': '15rem'}}>
+            <p className="flow-text">No Bootcamps Yet.</p>
+            { authState.user && (authState.user.role === 'admin' || authState.user.role === 'publisher') && <Fragment>
+                <Link to='/add-bootcamp' className='btn red pulse'>Add Bootcamp</Link>
+            </Fragment> }
         </div>
-        </Fragment> }
-
         </Fragment>
-
     }
-
+    
     const isEligible = () => {
         const res = bootcamps.filter(b => b.user === authState.user._id)
         if(res.length === 0){
@@ -120,7 +114,7 @@ const Bootcamps = ({ getBootcampByDistance, getAllBootCamps, bootcampState: { lo
                     </div>
                     <br/>
                     <div className="input-field">
-                        <input type="submit" value="Locate" className='btn black darken-2'/>
+                        <input type="submit" value="Locate" className='btn red '/>
                     </div>
                 </form>
                 </div>
@@ -153,7 +147,7 @@ const Bootcamps = ({ getBootcampByDistance, getAllBootCamps, bootcampState: { lo
                     </div>
                     <br/>
                     <div className="input-field">
-                        <input type="submit" value="Filter" className='btn black darken-2'/>
+                        <input type="submit" value="Filter" className='btn red '/>
                     </div>
                 </form>
 

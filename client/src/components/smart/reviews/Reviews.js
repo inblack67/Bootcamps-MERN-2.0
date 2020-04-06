@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAllReviews } from '../../../actions/reviews'
@@ -13,8 +13,16 @@ const Reviews = ({ getAllReviews, reviewState: { reviews, loading } }) => {
         // eslint-disable-next-line
     },[])
 
-    if(loading){
+    if(loading || !reviews){
         return <Preloader />
+    }
+
+    if(reviews.length === 0){
+        return <Fragment>
+        <div className="container center" style={{'marginBottom': '10rem'}}>
+            <p className="flow-text">No Reviews Have Been Posted Yet.</p>
+        </div>
+        </Fragment>
     }
 
     return (

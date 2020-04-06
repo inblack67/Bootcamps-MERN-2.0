@@ -51,7 +51,7 @@ const Login = ({ authState: { isAuthenticated }, login }) => {
                 <br/>
                 <div className="input-field">
                     <input type="submit" value="Login" className='btn black darken-2'/>
-                    <Link to='/forgot-password' className='btn red secondary-content'>Forgot Password</Link>
+                    {/* <Link to='/forgot-password' className='btn red secondary-content'>Forgot Password</Link> */}
                 </div>
                 <br/>
             </form>

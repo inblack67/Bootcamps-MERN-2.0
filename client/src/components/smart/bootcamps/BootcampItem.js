@@ -39,7 +39,7 @@ const BootcampItem = ({ authState, deleteBootcamp, bootcamp: { name, _id, averag
                 <span className="card-title grey-text text-darken-4">{name}<i className="material-icons right">close</i></span>
             <p>{description}</p>
             <br/>
-            <Link to={`/bootcamps/${_id}`} className='btn black pulse'>Explore</Link>
+            <Link to={`/bootcamps/${_id}`} className='btn red pulse'>Explore</Link>
             </div>
             </div>
         </div>

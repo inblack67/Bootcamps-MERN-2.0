@@ -96,8 +96,6 @@ export const updateUser = (newData, id) => async dispatch => {
             payload: res.data.data
         })
 
-        console.log(res.data);
-
         if(res.data.success){
             M.toast({ html: 'User Updated' })
         }

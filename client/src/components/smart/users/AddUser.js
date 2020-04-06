@@ -84,7 +84,6 @@ const AddUser = ({ history, addUser }) => {
                 <br/>
                 <div className="input-field">
                     <input type="submit" value="Add" className='btn green'/>
-                    <Link to='/users' className='red btn secondary-content'>Back To Users</Link>
                 </div>
                 <br/>
             </form>

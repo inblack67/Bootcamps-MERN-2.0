@@ -5,8 +5,9 @@ import { getCoursesByBootcamp } from '../../../actions/courses'
 import { getSingleBootcamp } from '../../../actions/bootcamps'
 import Preloader from '../../dumb/Preloader'
 import CoursesByBootcampItem from './CoursesByBootcampItem'
+import { Link } from 'react-router-dom'
 
-const CoursesByBootcamp = ({ match, getSingleBootcamp, getCoursesByBootcamp, bootcampState,bootcampState: { bootcamp }, courseState: { courses, loading }}) => {
+const CoursesByBootcamp = ({ match, authState, getSingleBootcamp, getCoursesByBootcamp, bootcampState,bootcampState: { bootcamp }, courseState: { courses, loading }}) => {
 
     useEffect(() => {
         getSingleBootcamp(match.params.id)
@@ -20,8 +21,11 @@ const CoursesByBootcamp = ({ match, getSingleBootcamp, getCoursesByBootcamp, boo
 
     if( courses && courses.length === 0 && !loading){
         return <Fragment>
-            <div className="container">
-                <p className="flow-text center">No course has been published yet.</p>
+            <div className="container center" style={{'marginBottom': '10rem'}}>
+                <p className="flow-text">No Courses Have Been Published For This Bootcamp Yet.</p>
+                { authState.user && (authState.user.role === 'admin' || authState.user.role === 'publisher') && <Fragment>
+                <Link to='/add-course' className='btn red pulse'>Add Course</Link>
+                </Fragment> }
             </div>
         </Fragment>
     }
@@ -53,7 +57,8 @@ CoursesByBootcamp.propTypes = {
 
 const mapStateToProps = state => ({
     bootcampState: state.BootcampState,
-    courseState: state.CourseState
+    courseState: state.CourseState,
+    authState: state.AuthState
 })
 
 export default connect(mapStateToProps, { getCoursesByBootcamp, getSingleBootcamp })(CoursesByBootcamp)

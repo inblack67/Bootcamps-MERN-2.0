@@ -40,34 +40,35 @@ const CourseItem = ({ course, authState, deleteCourse, history, match, courseSta
                     { match.params.id !== _id && <Fragment>
                         <Link to={`/courses/${_id}`}>Explore</Link>
                     </Fragment> }
-                    <br/><br/>
-
-                    <Link to={`/bootcamps/${bootcamp._id}`} className='blue-text'>Explore Bootcamp</Link>
 
                     { authState.isAuthenticated &&  
                     ( authState.user.role === 'admin' || ( authState.user._id === user ) ) && <Fragment>
-                    <a href='#!' onClick={onDelete} className='red-text secondary-content'>Delete</a>
                     <br/>
                     <br/>
                     <span>
                     { match.params.id === _id && <Fragment>
+                        <a href='#!' onClick={onDelete} className='red-text secondary-content'>Delete</a>
                         <Link to={`/update-course/${_id}`} className='green-text'>Update Course</Link>
+                        <br/><br/>
                     </Fragment> }
                     </span>
                     </Fragment> }
+
+                    { match.params.id === _id && <Fragment>
+                        <Link to={`/bootcamps/${bootcamp._id}`} className='blue-text'>Explore Bootcamp</Link>
+                        <br/>
+                        <br/>
+                        <p>
+                        <i className="material-icons left">devices</i>{ bootcamp.name }
+                        </p>
+                    </Fragment> }
+
                 </p>
-                <br/>
-                 
-                <p>
-                    <i className="material-icons left">devices</i>{ bootcamp.name }
-                </p>
+
             </div>
             <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">{title}<i className="material-icons right">close</i></span>
             <p>{description}</p>
-            <p className='grey-text'>{bootcamp.name}</p>
-            <br/>
-            <Link to={`/bootcamps/${bootcamp._id}`} className='btn black pulse'>Explore Bootcamp</Link>
             </div>
             </div>
         </div>

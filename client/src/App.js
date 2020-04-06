@@ -66,8 +66,8 @@ function App() {
           <PrivateRoute exact path='/users/:id' component={SingleUser}/>
           <PrivateRoute exact path='/users/user/:id' component={UpdateUser}/>
           <PrivateRoute exact path='/add-user' component={AddUser}/>
-          <Route exact path='/forgot-password' component={ForgotPassword}/>
-          <Route exact path='/reset-password/:resetToken' component={ResetPassword}/>
+          {/* <Route exact path='/forgot-password' component={ForgotPassword}/>
+          <Route exact path='/reset-password/:resetToken' component={ResetPassword}/> */}
 
           {/* home */}
           <Route exact path='/' component={Home}/>

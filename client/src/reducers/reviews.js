@@ -38,7 +38,7 @@ export default (state=initialState, action) => {
             return {
                 ...state,
                 review: null,
-                reviews: state.reviews.filter(c => c._id !== payload),
+                reviews: state.reviews.filter(r => r._id !== payload),
                 loading: false
             }
 
