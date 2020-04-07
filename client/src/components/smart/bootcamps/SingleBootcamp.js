@@ -7,10 +7,8 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import { deleteBootcamp } from '../../../actions/bootcamps'
 import { withRouter, Link } from 'react-router-dom'
 import { getCoursesByBootcamp } from '../../../actions/courses'
-import CourseItem from '../courses/CourseItem'
-import CoursesByBootcamp from '../courses/CoursesByBootcamp'
 
-const SingleBootcamp = ({ courseState, courseState: { courses } , getCoursesByBootcamp, history, authState, deleteBootcamp, getSingleBootcamp, match, bootcampState: { bootcamp, loading } }) => {
+const SingleBootcamp = ({ history, authState, deleteBootcamp, getSingleBootcamp, match, bootcampState: { bootcamp, loading } }) => {
 
     useEffect(() => {
         getSingleBootcamp(match.params.id)
@@ -167,7 +165,6 @@ SingleBootcamp.propTypes = {
 const mapStateToProps = state => ({
     bootcampState: state.BootcampState,
     authState: state.AuthState,
-    courseState: state.CourseState
 })
 
 export default connect(mapStateToProps, { getSingleBootcamp, deleteBootcamp, getCoursesByBootcamp })(withRouter(SingleBootcamp))

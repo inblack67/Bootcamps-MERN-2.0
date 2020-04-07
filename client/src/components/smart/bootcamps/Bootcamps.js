@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { getAllBootCamps, getBootcampByDistance } from '../../../actions/bootcamps'
 import Preloader from '../../dumb/Preloader'
 import BootcampItem from './BootcampItem'
-import M from 'materialize-css/dist/js/materialize.min.js';
 import { Link } from 'react-router-dom'
 import AutoInitBot from '../AutoInitBot'
 
@@ -100,7 +99,7 @@ const Bootcamps = ({ getBootcampByDistance, getAllBootCamps, bootcampState: { lo
             </Fragment> }
 
             <div className="row">
-            <div className="col m6">
+            <div className="col m6 hide-on-small-only">
                 <div className="container">
                 <p className="flow-text">Location Matters?</p>
                 <form onSubmit={onSubmit}>

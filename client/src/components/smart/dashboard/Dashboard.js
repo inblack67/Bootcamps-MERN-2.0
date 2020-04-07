@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Redirect, Link } from 'react-router-dom'
 import Preloader from '../../dumb/Preloader'
+import { Link } from 'react-router-dom'
 
-const Dashboard = ({ authState: { loading, user, isAuthenticated } }) => {
+const Dashboard = ({ authState: { loading, user } }) => {
 
     while(loading || !user){
         return <Preloader />
     }
 
-    const { name, email, _id, role } = user
+    const { name, role } = user
 
     return (
         

@@ -5,7 +5,6 @@ import { Fragment } from 'react'
 import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
 import { deleteReview } from '../../../actions/reviews'
-import { useEffect } from 'react'
 
 const ReviewsByBootcampItem = ({ deleteReview, reviewState: { reviews }, review: { title, text, rating, bootcamp, user, createdAt, _id }, authState }) => {
 

@@ -4,7 +4,6 @@ import AutoInitBot from '../AutoInitBot'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { addBootcamp } from '../../../actions/bootcamps'
-import Preloader from '../../dumb/Preloader'
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddBootcamp = ({ addBootcamp, history, bootcampState: { loading, bootcamps }, authState: { user } }) => {

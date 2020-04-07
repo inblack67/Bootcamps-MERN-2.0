@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { updateUser, getSingleUser } from '../../../actions/users'
 import Preloader from '../../dumb/Preloader'
+import { withRouter } from 'react-router-dom'
 
 const UpdateUser = ({ history, match, updateUser, getSingleUser, userState: { user, loading } }) => {
 

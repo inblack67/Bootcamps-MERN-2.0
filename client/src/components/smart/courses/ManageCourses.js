@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAllCourses } from '../../../actions/courses'
-import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
 const ManageCourses = ({ getAllCourses, bootcampState, courseState }) => {

@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { addReview } from '../../../actions/reviews'
 import Preloader from '../../dumb/Preloader'
-import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddReview = ({ addReview, history, reviewState: { loading }, bootcampState: { bootcamp } }) => {
 

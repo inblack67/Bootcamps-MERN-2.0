@@ -4,7 +4,6 @@ import AutoInitBot from '../AutoInitBot'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { updateBootcamp } from '../../../actions/bootcamps'
-import Preloader from '../../dumb/Preloader'
 
 const UpdateBootcamp = ({ updateBootcamp, history, bootcampState: { bootcamp,loading } }) => {
 
@@ -145,7 +144,7 @@ const UpdateBootcamp = ({ updateBootcamp, history, bootcampState: { bootcamp,loa
                     </div>
                     <br/>
                     <div className="input-field">
-                        <select name='careers' multiple value={careers} required onChange={onSelect} multiple>
+                        <select name='careers' multiple value={careers} required onChange={onSelect}>
                             <option defaultValue disabled>Career</option>
                             <option>Web Development</option>
                             <option>Mobile Development</option>

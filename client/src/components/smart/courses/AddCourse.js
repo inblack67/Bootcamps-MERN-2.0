@@ -4,7 +4,6 @@ import AutoInitBot from '../AutoInitBot'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { addCourse } from '../../../actions/courses'
-import Preloader from '../../dumb/Preloader'
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddCourse = ({ addCourse, history, courseState: { loading }, bootcampState: { bootcamp } }) => {

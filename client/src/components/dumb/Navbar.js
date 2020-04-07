@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { logout } from '../../actions/auth'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Preloader from './Preloader'
 import userImg from '../../img/anonymous.jpg'
 
 const Navbar = ({ logout, authState: { loading, isAuthenticated } }) => {
@@ -40,7 +39,7 @@ const Navbar = ({ logout, authState: { loading, isAuthenticated } }) => {
         <nav className='red'>
             <div className="nav-wrapper">
             <a href="#!" className='left sidenav-trigger show-on-large' data-target='mobile-nav'><i className="material-icons">menu</i></a>
-                <Link to="/" className="brand-logo center"><i className="left material-icons">devices
+                <Link to="/" className="brand-logo center"><i className="left material-icons hide-on-small-only">devices
                 </i>BootCamps</Link>
                 <ul className="right hide-on-med-and-down">
                     { !loading && isAuthenticated ? authLinks : guestLinks }
@@ -52,7 +51,7 @@ const Navbar = ({ logout, authState: { loading, isAuthenticated } }) => {
         <div className="user-view">
         <div className="background grey darken-4">
         </div>
-        <Link to="/"><img className="circle" src={userImg} /></Link>
+        <Link to="/"><img className="circle" src={userImg} alt='' /></Link>
         <Link to="/"><span className="white-text name">Aman Bhardwaj</span></Link>
         </div>
         </li>

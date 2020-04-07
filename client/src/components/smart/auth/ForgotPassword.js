@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { forgotPassword, getResetToken } from '../../../actions/auth'
-import Preloader from '../../dumb/Preloader'
 import { Redirect } from 'react-router-dom'
 
 const ForgotPassword = ({ getResetToken, forgotPassword, authState: { loading, resetToken } }) => {

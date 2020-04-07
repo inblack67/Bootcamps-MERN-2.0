@@ -4,7 +4,6 @@ import { Link,withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { deleteCourse } from '../../../actions/courses'
 import Moment from 'react-moment'
-import UpdateCourse from './UpdateCourse'
 
 const CourseItem = ({ course, authState, deleteCourse, history, match, courseState: { loading } }) => {
 
@@ -58,9 +57,9 @@ const CourseItem = ({ course, authState, deleteCourse, history, match, courseSta
                         <Link to={`/bootcamps/${bootcamp._id}`} className='blue-text'>Explore Bootcamp</Link>
                         <br/>
                         <br/>
-                        <p>
+                        <span>
                         <i className="material-icons left">devices</i>{ bootcamp.name }
-                        </p>
+                        </span>
                     </Fragment> }
 
                 </p>
